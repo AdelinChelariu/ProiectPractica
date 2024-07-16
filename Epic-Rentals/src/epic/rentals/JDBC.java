@@ -1,8 +1,6 @@
 package epic.rentals;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.SQLException;
+import java.sql.*;
 
 public class JDBC {
     
@@ -25,6 +23,78 @@ public class JDBC {
         return connection;
     }
     
+    public static char emailCheck(String email, String password){
+        try{
+            String query = "SELECT roleid FROM users WHERE email = ? AND password = ?";
+            PreparedStatement stmt = connection.prepareStatement(query);
+            stmt.setString(1, email);
+            stmt.setString(2, password);
+            ResultSet rs = stmt.executeQuery();
+            
+            if(rs.next())
+                if(rs.getInt("roleID")==2)
+                    return 'u';
+                else 
+                    return 'a';
+            
+        }catch(SQLException e){
+            e.printStackTrace();
+        }
+        return 'i';
+    }
+    
+    public static void registerUser(String firstName, String lastName, String email, String phone, String address, String password){
+        
+        String query = "insert into users (firstname, lastname, email, phonenumber, address, roleid, password)\n" +
+        "values \n" +
+        "('" +  firstName + "', '" + lastName + "', '" + email + "', '" + phone + "', '" + address + "', 2, '" + password + "');";
+        
+        
+        try{
+            Statement stmt = connection.createStatement();
+            stmt.executeUpdate(query);
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        } 
+    }
+    
+    public static void addUser(String firstName, String lastName, String email, String phone, String address, char role, String password){
+        
+        char roleNumber;
+        
+        if(role ==  'a')
+            roleNumber = '1';
+        else
+            roleNumber = '2';
+        
+        String query = "insert into users (firstname, lastname, email, phonenumber, address, roleid, password)\n" +
+        "values \n" +
+        "('" +  firstName + "', '" + lastName + "', '" + email + "', '" + phone + "', '" + address + "', " + roleNumber + ", '"  + password + "');";
+        
+        try{
+            Statement stmt = connection.createStatement();
+            stmt.executeUpdate(query);
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        } 
+    }
+    
+    public static void addItem(String title, int category, String type, int year, String  rating){
+        String query = "insert into items (title, categoryid, type, releaseyear, agerating)\n" +
+        "values \n" +
+        "('" +  title + "', " + category + ", '" + type + "', " + year + ", '" + rating + "');";
+        
+        try{
+            Statement stmt = connection.createStatement();
+            stmt.executeUpdate(query);
+        }
+        catch(SQLException e){
+            e.printStackTrace();
+        } 
+    }
+    
     public static void closeConnection() {
         if (connection != null) {
             try {
@@ -34,6 +104,12 @@ public class JDBC {
                 e.printStackTrace();
             }
         }
+    }
+    
+    public static void main(String[] args) {
+        getConnection();
+        
+        
     }
     
 }
