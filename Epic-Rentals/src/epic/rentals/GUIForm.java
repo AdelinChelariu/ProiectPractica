@@ -9,8 +9,7 @@ import javax.swing.table.*;
 public class GUIForm extends JFrame {
 
     public GUIForm() {
-        initComponents();
-        
+        initComponents();   
     }
 
     @SuppressWarnings("unchecked")
@@ -38,7 +37,6 @@ public class GUIForm extends JFrame {
         registerConfirmButton = new javax.swing.JButton();
         registerBackButton = new javax.swing.JButton();
         userViewPanel = new javax.swing.JPanel();
-        userViewSearchField = new javax.swing.JTextField();
         userLogoutButton = new javax.swing.JButton();
         searchButton = new javax.swing.JButton();
         jSeparator1 = new javax.swing.JSeparator();
@@ -46,12 +44,8 @@ public class GUIForm extends JFrame {
         userViewUsernameLabel = new javax.swing.JLabel();
         yourRentalsLabel = new javax.swing.JLabel();
         rentalsPanel = new javax.swing.JPanel();
-        rent1 = new javax.swing.JLabel();
-        rent2 = new javax.swing.JLabel();
-        rent3 = new javax.swing.JLabel();
-        rent4 = new javax.swing.JLabel();
-        rent5 = new javax.swing.JLabel();
-        rent6 = new javax.swing.JLabel();
+        jScrollPane1 = new javax.swing.JScrollPane();
+        userRentalsTable = new javax.swing.JTable();
         adminViewPanel = new javax.swing.JPanel();
         adminUsersScrollPane = new javax.swing.JScrollPane();
         usersTable = new javax.swing.JTable();
@@ -62,6 +56,8 @@ public class GUIForm extends JFrame {
         adminLogoutButton = new javax.swing.JButton();
         adminAddUsersButton = new javax.swing.JButton();
         adminAddItemsButton = new javax.swing.JButton();
+        adminDeleteUsersButton = new javax.swing.JButton();
+        adminDeleteItemsButton = new javax.swing.JButton();
         userAddPanel = new javax.swing.JPanel();
         addFirstNameField = new javax.swing.JTextField();
         addLastNameField = new javax.swing.JTextField();
@@ -89,7 +85,6 @@ public class GUIForm extends JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
         setTitle("EpicRentals");
-        setAlwaysOnTop(true);
         setResizable(false);
         setSize(new java.awt.Dimension(750, 500));
 
@@ -154,7 +149,7 @@ public class GUIForm extends JFrame {
                 .addComponent(titleLabel)
                 .addGap(83, 83, 83)
                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(emailIconLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 50, Short.MAX_VALUE)
+                    .addComponent(emailIconLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 64, Short.MAX_VALUE)
                     .addComponent(loginEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, 32, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(55, 55, 55)
                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
@@ -164,7 +159,7 @@ public class GUIForm extends JFrame {
                 .addGroup(loginPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(loginButton)
                     .addComponent(registerButton))
-                .addContainerGap(175, Short.MAX_VALUE))
+                .addContainerGap(189, Short.MAX_VALUE))
         );
 
         jPanel1.add(loginPanel, "card2");
@@ -254,7 +249,7 @@ public class GUIForm extends JFrame {
                 .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(registerFirstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(registerLastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 45, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 73, Short.MAX_VALUE)
                 .addGroup(registerPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(registerEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(registerPhoneField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -273,8 +268,11 @@ public class GUIForm extends JFrame {
 
         jPanel1.add(registerPanel, "card3");
 
-        userViewSearchField.setFont(new java.awt.Font("Arial", 0, 12)); // NOI18N
-        userViewSearchField.setText("Search...");
+        userViewPanel.addComponentListener(new java.awt.event.ComponentAdapter() {
+            public void componentShown(java.awt.event.ComponentEvent evt) {
+                userViewPanelComponentShown(evt);
+            }
+        });
 
         userLogoutButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/logout16.png"))); // NOI18N
         userLogoutButton.addActionListener(new java.awt.event.ActionListener() {
@@ -284,6 +282,11 @@ public class GUIForm extends JFrame {
         });
 
         searchButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/loupe.png"))); // NOI18N
+        searchButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                searchButtonActionPerformed(evt);
+            }
+        });
 
         jSeparator2.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
@@ -292,49 +295,35 @@ public class GUIForm extends JFrame {
 
         rentalsPanel.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
 
-        rent1.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-
-        rent2.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-
-        rent3.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-
-        rent4.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-
-        rent5.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-
-        rent6.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        userRentalsTable.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        userRentalsTable.setModel(new javax.swing.table.DefaultTableModel(
+            new Object [][] {
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null},
+                {null, null, null, null}
+            },
+            new String [] {
+                "Title 1", "Title 2", "Title 3", "Title 4"
+            }
+        ));
+        jScrollPane1.setViewportView(userRentalsTable);
 
         javax.swing.GroupLayout rentalsPanelLayout = new javax.swing.GroupLayout(rentalsPanel);
         rentalsPanel.setLayout(rentalsPanelLayout);
         rentalsPanelLayout.setHorizontalGroup(
             rentalsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(rentalsPanelLayout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, rentalsPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(rentalsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(rent1)
-                    .addComponent(rent2)
-                    .addComponent(rent3)
-                    .addComponent(rent4)
-                    .addComponent(rent5)
-                    .addComponent(rent6))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.DEFAULT_SIZE, 738, Short.MAX_VALUE)
+                .addContainerGap())
         );
         rentalsPanelLayout.setVerticalGroup(
             rentalsPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(rentalsPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(rent1)
-                .addGap(18, 18, 18)
-                .addComponent(rent2)
-                .addGap(18, 18, 18)
-                .addComponent(rent3)
-                .addGap(18, 18, 18)
-                .addComponent(rent4)
-                .addGap(18, 18, 18)
-                .addComponent(rent5)
-                .addGap(18, 18, 18)
-                .addComponent(rent6)
-                .addContainerGap(315, Short.MAX_VALUE))
+                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(18, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout userViewPanelLayout = new javax.swing.GroupLayout(userViewPanel);
@@ -347,10 +336,8 @@ public class GUIForm extends JFrame {
                 .addGroup(userViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(rentalsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addGroup(userViewPanelLayout.createSequentialGroup()
-                        .addComponent(userViewSearchField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
                         .addComponent(searchButton)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 283, Short.MAX_VALUE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jSeparator2, javax.swing.GroupLayout.PREFERRED_SIZE, 3, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(userViewUsernameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
@@ -358,7 +345,7 @@ public class GUIForm extends JFrame {
                         .addComponent(userLogoutButton))
                     .addGroup(userViewPanelLayout.createSequentialGroup()
                         .addComponent(yourRentalsLabel)
-                        .addGap(0, 0, Short.MAX_VALUE)))
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
                 .addContainerGap())
         );
         userViewPanelLayout.setVerticalGroup(
@@ -369,14 +356,13 @@ public class GUIForm extends JFrame {
                     .addGroup(userViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                         .addComponent(searchButton, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                         .addComponent(jSeparator2)
-                        .addComponent(userViewUsernameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                        .addComponent(userViewSearchField))
+                        .addComponent(userViewUsernameLabel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                     .addComponent(userLogoutButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addComponent(yourRentalsLabel)
-                .addGap(18, 18, 18)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(rentalsPanel, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                 .addContainerGap())
         );
@@ -442,6 +428,20 @@ public class GUIForm extends JFrame {
             }
         });
 
+        adminDeleteUsersButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/minus.png"))); // NOI18N
+        adminDeleteUsersButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminDeleteUsersButtonActionPerformed(evt);
+            }
+        });
+
+        adminDeleteItemsButton.setIcon(new javax.swing.ImageIcon(getClass().getResource("/Assets/minus.png"))); // NOI18N
+        adminDeleteItemsButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                adminDeleteItemsButtonActionPerformed(evt);
+            }
+        });
+
         javax.swing.GroupLayout adminViewPanelLayout = new javax.swing.GroupLayout(adminViewPanel);
         adminViewPanel.setLayout(adminViewPanelLayout);
         adminViewPanelLayout.setHorizontalGroup(
@@ -457,13 +457,17 @@ public class GUIForm extends JFrame {
                                 .addGap(124, 124, 124)
                                 .addComponent(adminUsersLabel)
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                                .addComponent(adminDeleteUsersButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(adminAddUsersButton)))
                         .addGroup(adminViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addComponent(adminItemsScrollPane, javax.swing.GroupLayout.DEFAULT_SIZE, 384, Short.MAX_VALUE)
                             .addGroup(adminViewPanelLayout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addComponent(adminItemsLabel)
-                                .addGap(110, 110, 110)
+                                .addGap(79, 79, 79)
+                                .addComponent(adminDeleteItemsButton)
+                                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                                 .addComponent(adminAddItemsButton))))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminViewPanelLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
@@ -475,14 +479,17 @@ public class GUIForm extends JFrame {
             .addGroup(adminViewPanelLayout.createSequentialGroup()
                 .addContainerGap()
                 .addComponent(adminLogoutButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 46, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 75, Short.MAX_VALUE)
                 .addGroup(adminViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(adminUsersLabel)
                         .addComponent(adminAddUsersButton))
-                    .addComponent(adminItemsLabel, javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(adminAddItemsButton, javax.swing.GroupLayout.Alignment.TRAILING))
-                .addGap(5, 5, 5)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                        .addComponent(adminItemsLabel)
+                        .addComponent(adminDeleteUsersButton))
+                    .addComponent(adminAddItemsButton, javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(adminDeleteItemsButton, javax.swing.GroupLayout.Alignment.TRAILING))
+                .addGap(4, 4, 4)
                 .addGroup(adminViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(adminItemsScrollPane, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(adminUsersScrollPane, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.PREFERRED_SIZE, 400, javax.swing.GroupLayout.PREFERRED_SIZE))
@@ -583,7 +590,7 @@ public class GUIForm extends JFrame {
                 .addGroup(userAddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(addPhoneField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 23, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addGroup(userAddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(addPasswordField)
                     .addComponent(addRoleField))
@@ -694,7 +701,7 @@ public class GUIForm extends JFrame {
                     .addComponent(itemAddRatingField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(84, 84, 84)
                 .addComponent(itemAddConfirmButton)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 65, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 93, Short.MAX_VALUE)
                 .addComponent(itemAddBackButton)
                 .addContainerGap())
         );
@@ -715,10 +722,11 @@ public class GUIForm extends JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private static String userEmail;
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         String email = loginEmailField.getText();
         String pass = new String(loginPasswordField.getPassword());
-        
+        userEmail=email;
         char logged = JDBC.emailCheck(email, pass);
         
         if(logged == 'u'){
@@ -895,6 +903,91 @@ public class GUIForm extends JFrame {
             cl.show(jPanel1, "card7");
     }//GEN-LAST:event_adminAddItemsButtonActionPerformed
 
+    private void userViewPanelComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_userViewPanelComponentShown
+        Connection conn = JDBC.getConnection();
+        if (conn != null) {
+            PreparedStatement stmt = null;
+            ResultSet rs = null;
+            try {
+                String query =  "SELECT Title, RentalDate AS \"Rented on\", ReturnDate AS \"Due on\" FROM Items, Rentals, Users\n" +
+                                "WHERE email = '" + userEmail + "' AND users.userid = rentals.userid AND items.itemid = rentals.itemid;";
+                stmt = conn.prepareStatement(query);
+                rs = stmt.executeQuery();
+
+                // Obține metadatele pentru a obține numele coloanelor
+                ResultSetMetaData rsmd = rs.getMetaData();
+                int columnCount = rsmd.getColumnCount();
+                String[] columnNames = new String[columnCount];
+                for (int i = 1; i <= columnCount; i++) {
+                    columnNames[i-1] = rsmd.getColumnName(i);
+                }
+
+                // Adaugă datele în modelul de tabel
+                DefaultTableModel model = new DefaultTableModel(columnNames, 0);
+                while (rs.next()) {
+                    Object[] row = new Object[columnCount];
+                    for (int i = 1; i <= columnCount; i++) {
+                        row[i-1] = rs.getObject(i);
+                    }
+                    model.addRow(row);
+                }
+
+                // Setează modelul în JTable
+                userRentalsTable.setModel(model);
+
+            } catch (SQLException e) {
+                e.printStackTrace();
+            }
+        }
+    }//GEN-LAST:event_userViewPanelComponentShown
+
+    private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
+        SearchWindow newWindow = new SearchWindow();
+        newWindow.setVisible(true);
+    }//GEN-LAST:event_searchButtonActionPerformed
+
+    private void adminDeleteUsersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminDeleteUsersButtonActionPerformed
+        int selectedRow = usersTable.getSelectedRow();
+        if (selectedRow != -1) {
+            String email = (String)usersTable.getValueAt(selectedRow, 2);
+            if(email.equals(userEmail)){
+                JOptionPane.showMessageDialog(this, "You Can't Erase Yourself!");
+                return;
+            }
+            Connection conn = JDBC.getConnection();
+            if (conn != null) {
+                
+                try{
+                    String query =  "DELETE FROM Users WHERE Email LIKE '" + email + "';";
+                    Statement stmt = conn.createStatement();
+                    stmt.executeUpdate(query);
+                    JOptionPane.showMessageDialog(this, "User Erased Successfully!");
+                }catch(SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }//GEN-LAST:event_adminDeleteUsersButtonActionPerformed
+
+    private void adminDeleteItemsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminDeleteItemsButtonActionPerformed
+        int selectedRow = itemsTable.getSelectedRow();
+        if (selectedRow != -1) {
+            String title = (String)itemsTable.getValueAt(selectedRow, 0);
+            
+            Connection conn = JDBC.getConnection();
+            if (conn != null) {
+                try{
+                    String query =  "DELETE FROM Items WHERE Title LIKE '" + title + "';";
+                    Statement stmt = conn.createStatement();
+                    stmt.executeUpdate(query);
+                    JOptionPane.showMessageDialog(this, "Item Erased Successfully!");
+                }catch(SQLException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+    }//GEN-LAST:event_adminDeleteItemsButtonActionPerformed
+
     public static void main(String args[]) {
         JDBC.getConnection();
         java.awt.EventQueue.invokeLater(new Runnable() {
@@ -916,6 +1009,8 @@ public class GUIForm extends JFrame {
     private javax.swing.JTextField addRoleField;
     private javax.swing.JButton adminAddItemsButton;
     private javax.swing.JButton adminAddUsersButton;
+    private javax.swing.JButton adminDeleteItemsButton;
+    private javax.swing.JButton adminDeleteUsersButton;
     private javax.swing.JLabel adminItemsLabel;
     private javax.swing.JScrollPane adminItemsScrollPane;
     private javax.swing.JButton adminLogoutButton;
@@ -939,6 +1034,7 @@ public class GUIForm extends JFrame {
     private javax.swing.JTable itemsTable;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
+    private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
     private javax.swing.JSeparator jSeparator2;
     private javax.swing.JButton loginButton;
@@ -958,19 +1054,13 @@ public class GUIForm extends JFrame {
     private javax.swing.JPasswordField registerPasswordField;
     private javax.swing.JPasswordField registerPasswordVerifyField;
     private javax.swing.JTextField registerPhoneField;
-    private javax.swing.JLabel rent1;
-    private javax.swing.JLabel rent2;
-    private javax.swing.JLabel rent3;
-    private javax.swing.JLabel rent4;
-    private javax.swing.JLabel rent5;
-    private javax.swing.JLabel rent6;
     private javax.swing.JPanel rentalsPanel;
     private javax.swing.JButton searchButton;
     private javax.swing.JLabel titleLabel;
     private javax.swing.JPanel userAddPanel;
     private javax.swing.JButton userLogoutButton;
+    private javax.swing.JTable userRentalsTable;
     private javax.swing.JPanel userViewPanel;
-    private javax.swing.JTextField userViewSearchField;
     private javax.swing.JLabel userViewUsernameLabel;
     private javax.swing.JTable usersTable;
     private javax.swing.JLabel yourRentalsLabel;

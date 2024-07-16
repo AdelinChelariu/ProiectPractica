@@ -8,6 +8,12 @@ public class JDBC {
     private static final String USER = "root";
     private static final String PASSWORD = "Adelin2711";
     
+    private static String userEmail;
+    
+    public  static String getEmail(){
+        return userEmail;
+    }
+    
     private static Connection connection = null;
 
     public static Connection getConnection() {
@@ -30,7 +36,7 @@ public class JDBC {
             stmt.setString(1, email);
             stmt.setString(2, password);
             ResultSet rs = stmt.executeQuery();
-            
+            userEmail = email;
             if(rs.next())
                 if(rs.getInt("roleID")==2)
                     return 'u';
@@ -107,9 +113,7 @@ public class JDBC {
     }
     
     public static void main(String[] args) {
-        getConnection();
-        
-        
+        //getConnection();
     }
     
 }
