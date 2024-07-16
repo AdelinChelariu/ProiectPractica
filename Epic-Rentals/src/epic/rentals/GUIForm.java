@@ -59,16 +59,16 @@ public class GUIForm extends JFrame {
         adminDeleteUsersButton = new javax.swing.JButton();
         adminDeleteItemsButton = new javax.swing.JButton();
         userAddPanel = new javax.swing.JPanel();
-        addFirstNameField = new javax.swing.JTextField();
-        addLastNameField = new javax.swing.JTextField();
-        addEmailField = new javax.swing.JTextField();
-        addPhoneField = new javax.swing.JTextField();
-        addPasswordField = new javax.swing.JPasswordField();
-        addAddressField = new javax.swing.JTextField();
-        addConfirmButton = new javax.swing.JButton();
-        addBackButton = new javax.swing.JButton();
-        addRoleField = new javax.swing.JTextField();
-        jLabel1 = new javax.swing.JLabel();
+        userAddFirstNameField = new javax.swing.JTextField();
+        userAddLastNameField = new javax.swing.JTextField();
+        userAddEmailField = new javax.swing.JTextField();
+        userAddPhoneField = new javax.swing.JTextField();
+        userAddPasswordField = new javax.swing.JPasswordField();
+        userAddAddressField = new javax.swing.JTextField();
+        userAddConfirmButton = new javax.swing.JButton();
+        userAddBackButton = new javax.swing.JButton();
+        userAddRoleField = new javax.swing.JTextField();
+        userAddLabel = new javax.swing.JLabel();
         itemAddPanel = new javax.swing.JPanel();
         itemAddTitleField = new javax.swing.JTextField();
         itemAddCategoryField = new javax.swing.JTextField();
@@ -343,9 +343,7 @@ public class GUIForm extends JFrame {
                         .addComponent(userViewUsernameLabel, javax.swing.GroupLayout.PREFERRED_SIZE, 184, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                         .addComponent(userLogoutButton))
-                    .addGroup(userViewPanelLayout.createSequentialGroup()
-                        .addComponent(yourRentalsLabel)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)))
+                    .addComponent(yourRentalsLabel))
                 .addContainerGap())
         );
         userViewPanelLayout.setVerticalGroup(
@@ -484,9 +482,9 @@ public class GUIForm extends JFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                         .addComponent(adminUsersLabel)
                         .addComponent(adminAddUsersButton))
-                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, adminViewPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(adminItemsLabel)
-                        .addComponent(adminDeleteUsersButton))
+                        .addComponent(adminDeleteUsersButton, javax.swing.GroupLayout.Alignment.TRAILING))
                     .addComponent(adminAddItemsButton, javax.swing.GroupLayout.Alignment.TRAILING)
                     .addComponent(adminDeleteItemsButton, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addGap(4, 4, 4)
@@ -500,45 +498,45 @@ public class GUIForm extends JFrame {
 
         jPanel1.add(adminViewPanel, "card5");
 
-        addFirstNameField.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        addFirstNameField.setText("First Name");
+        userAddFirstNameField.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        userAddFirstNameField.setText("First Name");
 
-        addLastNameField.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        addLastNameField.setText("Last Name");
+        userAddLastNameField.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        userAddLastNameField.setText("Last Name");
 
-        addEmailField.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        addEmailField.setText("Email");
+        userAddEmailField.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        userAddEmailField.setText("Email");
 
-        addPhoneField.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        addPhoneField.setText("Phone");
+        userAddPhoneField.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        userAddPhoneField.setText("Phone");
 
-        addPasswordField.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        addPasswordField.setText("Password");
+        userAddPasswordField.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        userAddPasswordField.setText("Password");
 
-        addAddressField.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        addAddressField.setText("Address");
+        userAddAddressField.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        userAddAddressField.setText("Address");
 
-        addConfirmButton.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
-        addConfirmButton.setText("Confirm");
-        addConfirmButton.addActionListener(new java.awt.event.ActionListener() {
+        userAddConfirmButton.setFont(new java.awt.Font("Arial", 1, 24)); // NOI18N
+        userAddConfirmButton.setText("Confirm");
+        userAddConfirmButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addConfirmButtonActionPerformed(evt);
+                userAddConfirmButtonActionPerformed(evt);
             }
         });
 
-        addBackButton.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
-        addBackButton.setText("Go Back");
-        addBackButton.addActionListener(new java.awt.event.ActionListener() {
+        userAddBackButton.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
+        userAddBackButton.setText("Go Back");
+        userAddBackButton.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                addBackButtonActionPerformed(evt);
+                userAddBackButtonActionPerformed(evt);
             }
         });
 
-        addRoleField.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
-        addRoleField.setText("Role Char");
+        userAddRoleField.setFont(new java.awt.Font("Arial", 0, 18)); // NOI18N
+        userAddRoleField.setText("Role Char");
 
-        jLabel1.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
-        jLabel1.setText("Add User");
+        userAddLabel.setFont(new java.awt.Font("Arial", 1, 48)); // NOI18N
+        userAddLabel.setText("Add User");
 
         javax.swing.GroupLayout userAddPanelLayout = new javax.swing.GroupLayout(userAddPanel);
         userAddPanel.setLayout(userAddPanelLayout);
@@ -551,55 +549,55 @@ public class GUIForm extends JFrame {
                         .addGroup(userAddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(userAddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                                 .addGroup(userAddPanelLayout.createSequentialGroup()
-                                    .addComponent(addFirstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(userAddFirstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                     .addGap(100, 100, 100)
-                                    .addComponent(addLastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
-                                .addComponent(addAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                    .addComponent(userAddLastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE))
+                                .addComponent(userAddAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, 500, javax.swing.GroupLayout.PREFERRED_SIZE)
                                 .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, userAddPanelLayout.createSequentialGroup()
                                     .addGroup(userAddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                                         .addGroup(userAddPanelLayout.createSequentialGroup()
-                                            .addComponent(addPhoneField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                            .addComponent(userAddPhoneField, javax.swing.GroupLayout.PREFERRED_SIZE, 200, javax.swing.GroupLayout.PREFERRED_SIZE)
                                             .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                                         .addGroup(userAddPanelLayout.createSequentialGroup()
-                                            .addComponent(addPasswordField)
+                                            .addComponent(userAddPasswordField)
                                             .addGap(100, 100, 100)))
                                     .addGroup(userAddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                                        .addComponent(addEmailField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
-                                        .addComponent(addRoleField))))
+                                        .addComponent(userAddEmailField, javax.swing.GroupLayout.DEFAULT_SIZE, 200, Short.MAX_VALUE)
+                                        .addComponent(userAddRoleField))))
                             .addGroup(userAddPanelLayout.createSequentialGroup()
                                 .addGap(189, 189, 189)
-                                .addComponent(addConfirmButton)))
+                                .addComponent(userAddConfirmButton)))
                         .addGap(119, 119, 119))
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, userAddPanelLayout.createSequentialGroup()
-                        .addComponent(addBackButton)
+                        .addComponent(userAddBackButton)
                         .addContainerGap())
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, userAddPanelLayout.createSequentialGroup()
-                        .addComponent(jLabel1)
+                        .addComponent(userAddLabel)
                         .addGap(269, 269, 269))))
         );
         userAddPanelLayout.setVerticalGroup(
             userAddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(userAddPanelLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel1)
+                .addComponent(userAddLabel)
                 .addGap(67, 67, 67)
                 .addGroup(userAddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addFirstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addLastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(userAddFirstNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(userAddLastNameField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(18, 18, 18)
                 .addGroup(userAddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(addPhoneField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(addEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(userAddPhoneField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(userAddEmailField, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 51, Short.MAX_VALUE)
                 .addGroup(userAddPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(addPasswordField)
-                    .addComponent(addRoleField))
+                    .addComponent(userAddPasswordField)
+                    .addComponent(userAddRoleField))
                 .addGap(36, 36, 36)
-                .addComponent(addAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(userAddAddressField, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(70, 70, 70)
-                .addComponent(addConfirmButton)
+                .addComponent(userAddConfirmButton)
                 .addGap(48, 48, 48)
-                .addComponent(addBackButton)
+                .addComponent(userAddBackButton)
                 .addContainerGap())
         );
 
@@ -723,6 +721,8 @@ public class GUIForm extends JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private static String userEmail;
+    
+    // Functia pentru logarea utilizatorului
     private void loginButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_loginButtonActionPerformed
         String email = loginEmailField.getText();
         String pass = new String(loginPasswordField.getPassword());
@@ -741,7 +741,8 @@ public class GUIForm extends JFrame {
             JOptionPane.showMessageDialog(this, "Invalid username or password.");
         }
     }//GEN-LAST:event_loginButtonActionPerformed
-
+    
+    // Functie pentru inregistrarea noului utilizator
     private void registerConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerConfirmButtonActionPerformed
         String firstName = registerFirstNameField.getText();
         String lastName = registerLastNameField.getText();
@@ -761,45 +762,52 @@ public class GUIForm extends JFrame {
             JOptionPane.showMessageDialog(this, "Passwords don't match.");
         }
     }//GEN-LAST:event_registerConfirmButtonActionPerformed
-
+    
+    // Functie pentru deschiderea paginii de inregistrare
     private void registerButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerButtonActionPerformed
         CardLayout cl = (CardLayout) (jPanel1.getLayout());
         cl.show(jPanel1, "card3");
     }//GEN-LAST:event_registerButtonActionPerformed
-
+    
+    // Functie pentru revenirea din pagina de inregistrare
     private void registerBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBackButtonActionPerformed
         CardLayout cl = (CardLayout) (jPanel1.getLayout());
         cl.show(jPanel1, "card2");
     }//GEN-LAST:event_registerBackButtonActionPerformed
-
+    
+    // Functie pentru delogarea utilizatorului administartor
     private void adminLogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminLogoutButtonActionPerformed
         CardLayout cl = (CardLayout) (jPanel1.getLayout());
         cl.show(jPanel1, "card2");
     }//GEN-LAST:event_adminLogoutButtonActionPerformed
-
+    
+    // Functie pentru delogarea utilizatorului simplu
     private void userLogoutButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userLogoutButtonActionPerformed
         CardLayout cl = (CardLayout) (jPanel1.getLayout());
         cl.show(jPanel1, "card2");
     }//GEN-LAST:event_userLogoutButtonActionPerformed
-
-    private void addBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addBackButtonActionPerformed
+    
+    // Functie pentru revenirea din pagina administatorului de adaugare a utilizatorilor
+    private void userAddBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userAddBackButtonActionPerformed
         CardLayout cl = (CardLayout) (jPanel1.getLayout());
             cl.show(jPanel1, "card5");
-    }//GEN-LAST:event_addBackButtonActionPerformed
+    }//GEN-LAST:event_userAddBackButtonActionPerformed
 
+    // Functie pentru a deschide pagina administratorului de adaugare a unui utilizaator nou
     private void adminAddUsersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddUsersButtonActionPerformed
         CardLayout cl = (CardLayout) (jPanel1.getLayout());
             cl.show(jPanel1, "card6");
     }//GEN-LAST:event_adminAddUsersButtonActionPerformed
 
-    private void addConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_addConfirmButtonActionPerformed
-        String firstName = addFirstNameField.getText();
-        String lastName = addLastNameField.getText();
-        String phone = addPhoneField.getText();
-        String email = addEmailField.getText();
-        String password =  new String(addPasswordField.getPassword());
-        String address =  addAddressField.getText();
-        String roleStr = addRoleField.getText();
+    // Functie pentru adaugarea unui utilizator nou de catre administrator
+    private void userAddConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_userAddConfirmButtonActionPerformed
+        String firstName = userAddFirstNameField.getText();
+        String lastName = userAddLastNameField.getText();
+        String phone = userAddPhoneField.getText();
+        String email = userAddEmailField.getText();
+        String password =  new String(userAddPasswordField.getPassword());
+        String address =  userAddAddressField.getText();
+        String roleStr = userAddRoleField.getText();
         char role = roleStr.charAt(0);
         
         if(role == 'u' || role == 'a'){
@@ -808,8 +816,9 @@ public class GUIForm extends JFrame {
             CardLayout cl = (CardLayout) (jPanel1.getLayout());
             cl.show(jPanel1, "card5");
         }
-    }//GEN-LAST:event_addConfirmButtonActionPerformed
+    }//GEN-LAST:event_userAddConfirmButtonActionPerformed
 
+    // Functie ce populeaza tabelele cu utilizatori si iteme pe pagina administratorului
     private void adminViewPanelComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_adminViewPanelComponentShown
         Connection conn = JDBC.getConnection();
         if (conn != null) {
@@ -880,11 +889,13 @@ public class GUIForm extends JFrame {
         }
     }//GEN-LAST:event_adminViewPanelComponentShown
 
+    // Functie pentru revenirea din pagina administatorului de adaugare a itemelor
     private void itemAddBackButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemAddBackButtonActionPerformed
         CardLayout cl = (CardLayout) (jPanel1.getLayout());
             cl.show(jPanel1, "card5");
     }//GEN-LAST:event_itemAddBackButtonActionPerformed
 
+    // Functie pentru adaugarea unui item nou de catre administrator
     private void itemAddConfirmButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemAddConfirmButtonActionPerformed
         String title = itemAddTitleField.getText();
         int category = Integer.parseInt(itemAddCategoryField.getText());
@@ -898,11 +909,13 @@ public class GUIForm extends JFrame {
         cl.show(jPanel1, "card5");
     }//GEN-LAST:event_itemAddConfirmButtonActionPerformed
 
+    // Functie pentru a deschide pagina administratorului de adaugare a unui item nou
     private void adminAddItemsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminAddItemsButtonActionPerformed
         CardLayout cl = (CardLayout) (jPanel1.getLayout());
             cl.show(jPanel1, "card7");
     }//GEN-LAST:event_adminAddItemsButtonActionPerformed
 
+    // Functie ce populeaza tabelul cu itemele inchiriate de utilizator
     private void userViewPanelComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_userViewPanelComponentShown
         Connection conn = JDBC.getConnection();
         if (conn != null) {
@@ -941,11 +954,13 @@ public class GUIForm extends JFrame {
         }
     }//GEN-LAST:event_userViewPanelComponentShown
 
+    // Functie pentru a deschide fereastra de cautare
     private void searchButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchButtonActionPerformed
         SearchWindow newWindow = new SearchWindow();
         newWindow.setVisible(true);
     }//GEN-LAST:event_searchButtonActionPerformed
 
+    // Functie pentru stergerea unui utilizator
     private void adminDeleteUsersButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminDeleteUsersButtonActionPerformed
         int selectedRow = usersTable.getSelectedRow();
         if (selectedRow != -1) {
@@ -969,6 +984,7 @@ public class GUIForm extends JFrame {
         }
     }//GEN-LAST:event_adminDeleteUsersButtonActionPerformed
 
+    // Functie pentru stergerea unui item
     private void adminDeleteItemsButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_adminDeleteItemsButtonActionPerformed
         int selectedRow = itemsTable.getSelectedRow();
         if (selectedRow != -1) {
@@ -998,15 +1014,6 @@ public class GUIForm extends JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JTextField addAddressField;
-    private javax.swing.JButton addBackButton;
-    private javax.swing.JButton addConfirmButton;
-    private javax.swing.JTextField addEmailField;
-    private javax.swing.JTextField addFirstNameField;
-    private javax.swing.JTextField addLastNameField;
-    private javax.swing.JPasswordField addPasswordField;
-    private javax.swing.JTextField addPhoneField;
-    private javax.swing.JTextField addRoleField;
     private javax.swing.JButton adminAddItemsButton;
     private javax.swing.JButton adminAddUsersButton;
     private javax.swing.JButton adminDeleteItemsButton;
@@ -1032,7 +1039,6 @@ public class GUIForm extends JFrame {
     private javax.swing.JLabel itemAddYearLabel;
     private javax.swing.JLabel itemsAddRatingLabel;
     private javax.swing.JTable itemsTable;
-    private javax.swing.JLabel jLabel1;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JSeparator jSeparator1;
@@ -1057,7 +1063,17 @@ public class GUIForm extends JFrame {
     private javax.swing.JPanel rentalsPanel;
     private javax.swing.JButton searchButton;
     private javax.swing.JLabel titleLabel;
+    private javax.swing.JTextField userAddAddressField;
+    private javax.swing.JButton userAddBackButton;
+    private javax.swing.JButton userAddConfirmButton;
+    private javax.swing.JTextField userAddEmailField;
+    private javax.swing.JTextField userAddFirstNameField;
+    private javax.swing.JLabel userAddLabel;
+    private javax.swing.JTextField userAddLastNameField;
     private javax.swing.JPanel userAddPanel;
+    private javax.swing.JPasswordField userAddPasswordField;
+    private javax.swing.JTextField userAddPhoneField;
+    private javax.swing.JTextField userAddRoleField;
     private javax.swing.JButton userLogoutButton;
     private javax.swing.JTable userRentalsTable;
     private javax.swing.JPanel userViewPanel;

@@ -26,12 +26,6 @@ public class SearchWindow extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.DISPOSE_ON_CLOSE);
 
-        jPanel1.addComponentListener(new java.awt.event.ComponentAdapter() {
-            public void componentShown(java.awt.event.ComponentEvent evt) {
-                jPanel1ComponentShown(evt);
-            }
-        });
-
         jTable1.setFont(new java.awt.Font("Arial", 0, 14)); // NOI18N
         jTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
@@ -106,11 +100,8 @@ public class SearchWindow extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
-    private void jPanel1ComponentShown(java.awt.event.ComponentEvent evt) {//GEN-FIRST:event_jPanel1ComponentShown
-        
-    }//GEN-LAST:event_jPanel1ComponentShown
-
+    
+    // Functie pentru a face cautare dupa un cuvant in baza de date
     private void searchWindowButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_searchWindowButtonActionPerformed
         String word = searchField.getText();
         
@@ -153,6 +144,7 @@ public class SearchWindow extends javax.swing.JFrame {
         
     }//GEN-LAST:event_searchWindowButtonActionPerformed
 
+    // Functie pentru a adauga o noua inchiriere in baza de date
     private void rentButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_rentButtonActionPerformed
         int selectedRow = jTable1.getSelectedRow();
         if (selectedRow != -1) {

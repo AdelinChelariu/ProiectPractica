@@ -361,10 +361,7 @@
                               <EmptySpace max="-2" attributes="0"/>
                               <Component id="userLogoutButton" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="102" attributes="0">
-                              <Component id="yourRentalsLabel" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="32767" attributes="0"/>
-                          </Group>
+                          <Component id="yourRentalsLabel" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
@@ -549,7 +546,7 @@
                               <Component id="adminUsersLabel" alignment="3" min="-2" max="-2" attributes="0"/>
                               <Component id="adminAddUsersButton" alignment="3" min="-2" max="-2" attributes="0"/>
                           </Group>
-                          <Group type="103" alignment="1" groupAlignment="3" attributes="0">
+                          <Group type="103" alignment="1" groupAlignment="0" attributes="0">
                               <Component id="adminItemsLabel" alignment="0" min="-2" max="-2" attributes="0"/>
                               <Component id="adminDeleteUsersButton" alignment="1" min="-2" max="-2" attributes="0"/>
                           </Group>
@@ -688,41 +685,41 @@
                               <Group type="103" groupAlignment="0" attributes="0">
                                   <Group type="103" alignment="0" groupAlignment="0" max="-2" attributes="0">
                                       <Group type="102" alignment="0" attributes="0">
-                                          <Component id="addFirstNameField" min="-2" pref="200" max="-2" attributes="0"/>
+                                          <Component id="userAddFirstNameField" min="-2" pref="200" max="-2" attributes="0"/>
                                           <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
-                                          <Component id="addLastNameField" min="-2" pref="200" max="-2" attributes="0"/>
+                                          <Component id="userAddLastNameField" min="-2" pref="200" max="-2" attributes="0"/>
                                       </Group>
-                                      <Component id="addAddressField" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
+                                      <Component id="userAddAddressField" alignment="0" min="-2" pref="500" max="-2" attributes="0"/>
                                       <Group type="102" alignment="1" attributes="0">
                                           <Group type="103" groupAlignment="0" attributes="0">
                                               <Group type="102" alignment="0" attributes="0">
-                                                  <Component id="addPhoneField" min="-2" pref="200" max="-2" attributes="0"/>
+                                                  <Component id="userAddPhoneField" min="-2" pref="200" max="-2" attributes="0"/>
                                                   <EmptySpace max="32767" attributes="0"/>
                                               </Group>
                                               <Group type="102" attributes="0">
-                                                  <Component id="addPasswordField" max="32767" attributes="0"/>
+                                                  <Component id="userAddPasswordField" max="32767" attributes="0"/>
                                                   <EmptySpace min="-2" pref="100" max="-2" attributes="0"/>
                                               </Group>
                                           </Group>
                                           <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                                              <Component id="addEmailField" pref="200" max="32767" attributes="0"/>
-                                              <Component id="addRoleField" max="32767" attributes="0"/>
+                                              <Component id="userAddEmailField" pref="200" max="32767" attributes="0"/>
+                                              <Component id="userAddRoleField" max="32767" attributes="0"/>
                                           </Group>
                                       </Group>
                                   </Group>
                                   <Group type="102" alignment="0" attributes="0">
                                       <EmptySpace min="-2" pref="189" max="-2" attributes="0"/>
-                                      <Component id="addConfirmButton" min="-2" max="-2" attributes="0"/>
+                                      <Component id="userAddConfirmButton" min="-2" max="-2" attributes="0"/>
                                   </Group>
                               </Group>
                               <EmptySpace min="-2" pref="119" max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="addBackButton" min="-2" max="-2" attributes="0"/>
+                              <Component id="userAddBackButton" min="-2" max="-2" attributes="0"/>
                               <EmptySpace max="-2" attributes="0"/>
                           </Group>
                           <Group type="102" alignment="1" attributes="0">
-                              <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                              <Component id="userAddLabel" min="-2" max="-2" attributes="0"/>
                               <EmptySpace min="-2" pref="269" max="-2" attributes="0"/>
                           </Group>
                       </Group>
@@ -733,35 +730,35 @@
               <Group type="103" groupAlignment="0" attributes="0">
                   <Group type="102" attributes="0">
                       <EmptySpace max="-2" attributes="0"/>
-                      <Component id="jLabel1" min="-2" max="-2" attributes="0"/>
+                      <Component id="userAddLabel" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="67" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="addFirstNameField" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="addLastNameField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="userAddFirstNameField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="userAddLastNameField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace type="separate" max="-2" attributes="0"/>
                       <Group type="103" groupAlignment="3" attributes="0">
-                          <Component id="addPhoneField" alignment="3" min="-2" max="-2" attributes="0"/>
-                          <Component id="addEmailField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="userAddPhoneField" alignment="3" min="-2" max="-2" attributes="0"/>
+                          <Component id="userAddEmailField" alignment="3" min="-2" max="-2" attributes="0"/>
                       </Group>
                       <EmptySpace pref="51" max="32767" attributes="0"/>
                       <Group type="103" groupAlignment="0" max="-2" attributes="0">
-                          <Component id="addPasswordField" max="32767" attributes="0"/>
-                          <Component id="addRoleField" max="32767" attributes="0"/>
+                          <Component id="userAddPasswordField" max="32767" attributes="0"/>
+                          <Component id="userAddRoleField" max="32767" attributes="0"/>
                       </Group>
                       <EmptySpace min="-2" pref="36" max="-2" attributes="0"/>
-                      <Component id="addAddressField" min="-2" pref="60" max="-2" attributes="0"/>
+                      <Component id="userAddAddressField" min="-2" pref="60" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="70" max="-2" attributes="0"/>
-                      <Component id="addConfirmButton" min="-2" max="-2" attributes="0"/>
+                      <Component id="userAddConfirmButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace min="-2" pref="48" max="-2" attributes="0"/>
-                      <Component id="addBackButton" min="-2" max="-2" attributes="0"/>
+                      <Component id="userAddBackButton" min="-2" max="-2" attributes="0"/>
                       <EmptySpace max="-2" attributes="0"/>
                   </Group>
               </Group>
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Component class="javax.swing.JTextField" name="addFirstNameField">
+            <Component class="javax.swing.JTextField" name="userAddFirstNameField">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="0"/>
@@ -769,7 +766,7 @@
                 <Property name="text" type="java.lang.String" value="First Name"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="addLastNameField">
+            <Component class="javax.swing.JTextField" name="userAddLastNameField">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="0"/>
@@ -777,7 +774,7 @@
                 <Property name="text" type="java.lang.String" value="Last Name"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="addEmailField">
+            <Component class="javax.swing.JTextField" name="userAddEmailField">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="0"/>
@@ -785,7 +782,7 @@
                 <Property name="text" type="java.lang.String" value="Email"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="addPhoneField">
+            <Component class="javax.swing.JTextField" name="userAddPhoneField">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="0"/>
@@ -793,7 +790,7 @@
                 <Property name="text" type="java.lang.String" value="Phone"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JPasswordField" name="addPasswordField">
+            <Component class="javax.swing.JPasswordField" name="userAddPasswordField">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="0"/>
@@ -801,7 +798,7 @@
                 <Property name="text" type="java.lang.String" value="Password"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JTextField" name="addAddressField">
+            <Component class="javax.swing.JTextField" name="userAddAddressField">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="0"/>
@@ -809,7 +806,7 @@
                 <Property name="text" type="java.lang.String" value="Address"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JButton" name="addConfirmButton">
+            <Component class="javax.swing.JButton" name="userAddConfirmButton">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="24" style="1"/>
@@ -817,10 +814,10 @@
                 <Property name="text" type="java.lang.String" value="Confirm"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addConfirmButtonActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="userAddConfirmButtonActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JButton" name="addBackButton">
+            <Component class="javax.swing.JButton" name="userAddBackButton">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="14" style="0"/>
@@ -828,10 +825,10 @@
                 <Property name="text" type="java.lang.String" value="Go Back"/>
               </Properties>
               <Events>
-                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="addBackButtonActionPerformed"/>
+                <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="userAddBackButtonActionPerformed"/>
               </Events>
             </Component>
-            <Component class="javax.swing.JTextField" name="addRoleField">
+            <Component class="javax.swing.JTextField" name="userAddRoleField">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="18" style="0"/>
@@ -839,7 +836,7 @@
                 <Property name="text" type="java.lang.String" value="Role Char"/>
               </Properties>
             </Component>
-            <Component class="javax.swing.JLabel" name="jLabel1">
+            <Component class="javax.swing.JLabel" name="userAddLabel">
               <Properties>
                 <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
                   <Font name="Arial" size="48" style="1"/>

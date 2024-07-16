@@ -10,12 +10,14 @@ public class JDBC {
     
     private static String userEmail;
     
+    //Functie pentru a obtine emailul utilizatorului logat
     public  static String getEmail(){
         return userEmail;
     }
     
     private static Connection connection = null;
 
+    // Functie pentru conectarea la baza de date
     public static Connection getConnection() {
         if (connection == null) {
             try {
@@ -29,6 +31,7 @@ public class JDBC {
         return connection;
     }
     
+    // Functie pentru verificarea corectitudinii datelor de logare
     public static char emailCheck(String email, String password){
         try{
             String query = "SELECT roleid FROM users WHERE email = ? AND password = ?";
@@ -49,6 +52,7 @@ public class JDBC {
         return 'i';
     }
     
+    // Functie pentru salvarea datelor unui utilizator nou in baza de date la inregistrare
     public static void registerUser(String firstName, String lastName, String email, String phone, String address, String password){
         
         String query = "insert into users (firstname, lastname, email, phonenumber, address, roleid, password)\n" +
@@ -65,6 +69,7 @@ public class JDBC {
         } 
     }
     
+    // Functie pentru salvarea datelor unui utilizator nou in baza de date de catre un admin
     public static void addUser(String firstName, String lastName, String email, String phone, String address, char role, String password){
         
         char roleNumber;
@@ -87,6 +92,7 @@ public class JDBC {
         } 
     }
     
+    // Functie pentru salvarea datelor unui item nou in baza de date de catre un admin
     public static void addItem(String title, int category, String type, int year, String  rating){
         String query = "insert into items (title, categoryid, type, releaseyear, agerating)\n" +
         "values \n" +
@@ -101,6 +107,7 @@ public class JDBC {
         } 
     }
     
+    // Functie pentru a opri conexiunea la baza de date
     public static void closeConnection() {
         if (connection != null) {
             try {
@@ -110,10 +117,6 @@ public class JDBC {
                 e.printStackTrace();
             }
         }
-    }
-    
-    public static void main(String[] args) {
-        //getConnection();
     }
     
 }
